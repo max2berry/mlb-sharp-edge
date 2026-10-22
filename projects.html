@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Projects · World Basketball Analytics Club</title>
+  <meta name="description" content="Predictions, case competitions, debates and fantasy leagues from the World Basketball Analytics Club.">
+  <meta name="theme-color" content="#0a121c">
+  <meta property="og:title" content="WBAC Projects">
+  <meta property="og:description" content="Predictions, case competitions, debates and more from the World Basketball Analytics Club.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="WBAC home">
+        <img src="assets/logo.svg" alt="" width="38" height="38">
+        <span>
+          <span class="brand-name">WBAC</span>
+          <span class="brand-full">World Basketball Analytics Club</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html#meetings">Meetings</a></li>
+          <li><a href="index.html#leadership">Leadership</a></li>
+          <li><a href="projects.html" aria-current="page">Projects</a></li>
+          <li><a class="btn btn-primary btn-sm" data-join href="index.html#connect" target="_blank" rel="noopener">Join the club</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero">
+      <div class="wrap">
+        <span class="eyebrow eyebrow-accent">Our work</span>
+        <h1>Projects</h1>
+        <p>Season predictions, front office simulations, data-driven debates and more. Everything here was built by members. Have an idea? Pitch it in the GroupMe.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="filters" id="project-filters" role="group" aria-label="Filter projects by category"></div>
+        <div class="projects" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="join-band">
+          <div>
+            <h2>Want in on the next one?</h2>
+            <p>Projects are open to every member. Join the GroupMe to hear when sign-ups open.</p>
+          </div>
+          <a class="btn btn-primary" data-join href="index.html#connect" target="_blank" rel="noopener">Join the GroupMe</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> World Basketball Analytics Club</span>
+      <div class="footer-socials" id="footer-socials"></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

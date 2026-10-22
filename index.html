@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>World Basketball Analytics Club (WBAC)</title>
+  <meta name="description" content="The World Basketball Analytics Club explores the game through data and analytics. Meetings, projects, leadership and how to join.">
+  <meta name="theme-color" content="#0a121c">
+  <meta property="og:title" content="World Basketball Analytics Club">
+  <meta property="og:description" content="Exploring the game through data & analytics. Basketball · Analytics · Insights.">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="index.html" aria-label="WBAC home">
+        <img src="assets/logo.svg" alt="" width="38" height="38">
+        <span>
+          <span class="brand-name">WBAC</span>
+          <span class="brand-full">World Basketball Analytics Club</span>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Menu"><span></span></button>
+      <nav id="site-nav" class="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="#meetings">Meetings</a></li>
+          <li><a href="#leadership">Leadership</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a class="btn btn-primary btn-sm" data-join href="#connect" target="_blank" rel="noopener">Join the club</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow eyebrow-accent">World Basketball Analytics Club</span>
+          <h1>Exploring the game through <em>data.</em></h1>
+          <p class="hero-lede">We're a student community for anyone who watches a game and wonders <em>why</em>. Debate the GOAT with real numbers, run a front office, build models and make picks we'll actually be held to.</p>
+          <ul class="hero-pillars">
+            <li>Basketball</li>
+            <li>Analytics</li>
+            <li>Insights</li>
+          </ul>
+          <div class="hero-cta">
+            <a class="btn btn-primary" data-join href="#connect" target="_blank" rel="noopener">Join the GroupMe</a>
+            <a class="btn btn-ghost" href="#meetings">Next meeting</a>
+          </div>
+        </div>
+
+        <figure class="court-card" aria-hidden="true">
+          <div class="court-head"><span>Shot chart</span><span id="shot-stat"></span></div>
+          <svg class="court" viewBox="0 0 500 470">
+            <g class="lines">
+              <rect x="1" y="1" width="498" height="468" rx="4"/>
+              <rect x="170" y="1" width="160" height="189"/>
+              <circle cx="250" cy="190" r="60"/>
+              <path d="M30 1v139M470 1v139"/>
+              <path d="M30 140A237.5 237.5 0 0 0 470 140"/>
+              <path d="M210 52A40 40 0 0 0 290 52"/>
+              <path d="M190 469A60 60 0 0 1 310 469"/>
+              <path d="M220 40h60"/>
+            </g>
+            <circle class="hoop" cx="250" cy="52" r="7.5"/>
+            <g id="shots"></g>
+          </svg>
+          <figcaption class="court-foot">
+            <span class="legend"><span><i class="dot"></i>Make</span><span><b class="x">×</b>Miss</span></span>
+            <span>WBAC · Sample data</span>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- Link hub -->
+    <section class="section" id="connect" aria-labelledby="connect-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Connect</span>
+            <h2 id="connect-title">Find us everywhere</h2>
+          </div>
+          <p>The GroupMe is the fastest way in. Meeting times, rooms and project sign-ups land there first.</p>
+        </div>
+        <div class="hub" id="link-hub"></div>
+      </div>
+    </section>
+
+    <!-- Meetings -->
+    <section class="section section-alt" id="meetings" aria-labelledby="meetings-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Calendar</span>
+            <h2 id="meetings-title">Upcoming meetings</h2>
+          </div>
+          <p>Everyone's welcome, no stats background needed. Just show up.</p>
+        </div>
+        <div class="meetings" id="meetings-upcoming"></div>
+        <details class="past">
+          <summary>Past meetings</summary>
+          <div class="meetings" id="meetings-past"></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Leadership -->
+    <section class="section" id="leadership" aria-labelledby="leadership-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">The front office</span>
+            <h2 id="leadership-title">Leadership team</h2>
+          </div>
+          <p>The people running meetings, building projects and keeping the group chat alive.</p>
+        </div>
+        <div class="leaders" id="leadership-grid"></div>
+      </div>
+    </section>
+
+    <!-- Projects teaser -->
+    <section class="section section-alt" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow">Our work</span>
+            <h2 id="projects-title">Recent projects</h2>
+          </div>
+          <a class="link-arrow" href="projects.html">All projects <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2" d="M5 12h13M13 6l6 6-6 6"/></svg></a>
+        </div>
+        <div class="projects" id="projects-teaser"></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="wrap">
+        <div class="join-band">
+          <div>
+            <h2>Pull up a chair.</h2>
+            <p>No experience required. If you love basketball and you're curious about the numbers behind it, you belong here.</p>
+          </div>
+          <a class="btn btn-primary" data-join href="#connect" target="_blank" rel="noopener">Join the GroupMe</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <span>© <span id="year"></span> World Basketball Analytics Club</span>
+      <div class="footer-socials" id="footer-socials"></div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
