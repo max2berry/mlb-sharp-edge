@@ -23,22 +23,29 @@ window.WBAC = {
       id: "groupme",
       label: "GroupMe",
       handle: "Join the group chat",
-      url: "https://groupme.com/join_group/116831912/Y7McCGsG", // TODO: confirm full invite link
+      url: "https://web.groupme.com/join_group/116831912/Y7McCGsG",
       blurb: "Where everything happens: meeting reminders, game-night threads and project sign-ups.",
     },
     {
       id: "instagram",
       label: "Instagram",
-      handle: "@TODO",
-      url: "https://instagram.com/TODO",
+      handle: "@wbac.iu",
+      url: "https://www.instagram.com/wbac.iu/",
       blurb: "Meeting graphics, season predictions, debate results and recaps.",
     },
     {
       id: "x",
       label: "X / Twitter",
-      handle: "@TODO",
-      url: "https://x.com/TODO",
+      handle: "@wbac_iu",
+      url: "https://x.com/wbac_iu",
       blurb: "Stat threads, live reactions and takes we'll defend with numbers.",
+    },
+    {
+      id: "beinvolved",
+      label: "BeInvolved",
+      handle: "Official IU listing",
+      url: "https://beinvolved.indiana.edu/organization/wbac",
+      blurb: "Become an official member and see us on IU's student organization directory.",
     },
   ],
 
@@ -72,8 +79,16 @@ window.WBAC = {
       location: "Psychology Building, Room 113",
       description: "Club fantasy league draft night.",
     },
-    // TODO: add upcoming meetings here, e.g.
-    // { title: "...", date: "2026-11-05", start: "18:30", end: "19:30", location: "...", description: "..." },
+    {
+      title: "General Meeting", // TODO: topic
+      date: "2026-10-27",
+      start: "19:00",
+      end: "20:00", // TODO: confirm end time
+      location: "Psychology Building, Room 113",
+      description: "",
+    },
+    // TODO: November meetings, e.g.
+    // { title: "...", date: "2026-11-10", start: "19:00", end: "20:00", location: "...", description: "..." },
   ],
 
   /*
@@ -90,55 +105,20 @@ window.WBAC = {
   ],
 
   /*
-   * Projects, newest first. category is used for the filter
-   * chips on the Projects page. image and link are optional.
-   * TODO: the summaries below are drafts based on Instagram posts.
+   * Projects, newest first. While this list is empty the Projects
+   * page shows "coming soon" and the home page hides its preview.
+   * category drives the filter chips; image and link are optional.
+   * Example:
+   * {
+   *   title: "2026–27 NBA Predictions",
+   *   category: "Predictions",
+   *   date: "Fall 2026",
+   *   status: "In progress",          // "In progress" is highlighted
+   *   summary: "One or two sentences.",
+   *   image: "assets/projects/predictions.jpg",
+   *   link: "https://...",
+   * },
    */
   projects: [
-    {
-      title: "2026–27 NBA Predictions",
-      category: "Predictions",
-      date: "Fall 2026",
-      status: "In progress",
-      summary: "The club's official calls for the new season: standings, award races and playoff picks, scored against reality in April.",
-      image: "",
-      link: "",
-    },
-    {
-      title: "Season Preview: What to Watch",
-      category: "Media",
-      date: "Fall 2026",
-      status: "Published",
-      summary: "A tip-off video breaking down the storylines and numbers to watch before the NBA season starts.",
-      image: "",
-      link: "",
-    },
-    {
-      title: "Club Fantasy League",
-      category: "Fantasy",
-      date: "Fall 2026",
-      status: "In progress",
-      summary: "Members drafted on October 13. Weekly standings, trade analysis and a season-long race for bragging rights.",
-      image: "",
-      link: "",
-    },
-    {
-      title: "NBA Front Office Simulation",
-      category: "Competition",
-      date: "Spring 2026",
-      status: "Completed",
-      summary: "A case competition where teams ran an NBA front office: cap sheets, trades, draft strategy and a final pitch.",
-      image: "",
-      link: "",
-    },
-    {
-      title: "The GOAT Debate",
-      category: "Debate",
-      date: "Spring 2026",
-      status: "Completed",
-      summary: "Jordan or LeBron? Members built the case for each side using era-adjusted stats, playoff impact and advanced metrics.",
-      image: "",
-      link: "",
-    },
   ],
 };

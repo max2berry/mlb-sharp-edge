@@ -16,7 +16,7 @@ A fast, static site for WBAC. Plain HTML, CSS and JS: no build step and no depen
 | Change the leadership team | Edit `leadership`. Put headshots in `assets/leaders/` and set `photo`. Without a photo, the card shows initials. |
 | Add a project | Add an entry to the top of `projects`. Images go in `assets/projects/`. The home page shows the first three. |
 
-Swap in the official logo by replacing `assets/logo.svg`. If your logo is a PNG, also update the `<img src>` and favicon `<link>` in both HTML files.
+Logo files live in `assets/`: `wbac-mark.png` (globe only, header and footer), `wbac-logo.webp` (full badge), plus `favicon.png` and `apple-touch-icon.png`.
 
 ## Previewing locally
 
@@ -30,12 +30,10 @@ Open `index.html` in a browser, or run `python3 -m http.server` and visit http:/
 
 ## Content checklist (still needed)
 
-- [ ] Official logo (SVG or high-res transparent PNG)
-- [ ] Instagram handle and URL
-- [ ] X/Twitter handle and URL
-- [ ] Confirm the full GroupMe invite link
+- [x] Official logo
+- [x] Instagram, X/Twitter, GroupMe and BeInvolved links
 - [ ] Club contact email
 - [ ] Leadership: name, role, year, major, 1–2 sentence bio, headshot, optional LinkedIn/email
-- [ ] Upcoming meeting dates, times, rooms and topics
-- [ ] Project details: accurate summaries, cover images (Instagram graphics work), links to slides, sheets or posts
-- [ ] Confirm the time zone in `data.js` (`America/Indiana/Indianapolis`)
+- [ ] Oct 27 meeting: topic and end time (currently "General Meeting", 7–8 PM)
+- [ ] November meeting dates, times, rooms and topics
+- [ ] Projects (the page shows "coming soon" until some are added)

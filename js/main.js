@@ -17,6 +17,7 @@
     groupme: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 3c5 0 9 3.4 9 7.7s-4 7.7-9 7.7c-.9 0-1.8-.1-2.6-.3L5 20.5l.9-3.9C4.1 15.2 3 13.1 3 10.7 3 6.4 7 3 12 3Z"/><path fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" d="M10.2 7.4v6.6M13.8 7.4v6.6M8 9.5h8M8 12h8"/></svg>',
     instagram: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 7.3A4.7 4.7 0 1 0 16.7 12 4.7 4.7 0 0 0 12 7.3Zm0 7.7a3 3 0 1 1 3-3 3 3 0 0 1-3 3Zm6-7.9a1.1 1.1 0 1 1-1.1-1.1A1.1 1.1 0 0 1 18 7.1ZM21.1 8.2a5.4 5.4 0 0 0-1.5-3.8 5.4 5.4 0 0 0-3.8-1.5C14.3 2.8 9.7 2.8 8.2 2.9a5.4 5.4 0 0 0-3.8 1.5 5.4 5.4 0 0 0-1.5 3.8c-.1 1.5-.1 6.1 0 7.6a5.4 5.4 0 0 0 1.5 3.8 5.4 5.4 0 0 0 3.8 1.5c1.5.1 6.1.1 7.6 0a5.4 5.4 0 0 0 3.8-1.5 5.4 5.4 0 0 0 1.5-3.8c.1-1.5.1-6.1 0-7.6Zm-2 9.3a3 3 0 0 1-1.7 1.7c-1.2.5-4 .4-5.4.4s-4.2.1-5.4-.4a3 3 0 0 1-1.7-1.7c-.5-1.2-.4-4-.4-5.5s-.1-4.2.4-5.4a3 3 0 0 1 1.7-1.7c1.2-.5 4-.4 5.4-.4s4.2-.1 5.4.4a3 3 0 0 1 1.7 1.7c.5 1.2.4 4 .4 5.4s.1 4.3-.4 5.5Z"/></svg>',
     x: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M17.8 3h3.1l-6.8 7.7 8 10.3h-6.2l-4.9-6.3L5.4 21H2.3l7.2-8.3L1.8 3h6.4l4.4 5.8L17.8 3Zm-1.1 16.2h1.7L7.4 4.7H5.5l11.2 14.5Z"/></svg>',
+    beinvolved: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M3 9.5 12 4l9 5.5M5 10v8M9.7 10v8M14.3 10v8M19 10v8M3 20.5h18"/></svg>',
     linkedin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M20.4 20.5h-3.6v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.3V9h3.4v1.6c.5-.9 1.6-1.8 3.4-1.8 3.6 0 4.3 2.4 4.3 5.5v6.2ZM5.3 7.4a2.1 2.1 0 1 1 0-4.1 2.1 2.1 0 0 1 0 4.1ZM7.1 20.5H3.5V9h3.6v11.5ZM22.2 0H1.8C.8 0 0 .8 0 1.7v20.6c0 .9.8 1.7 1.8 1.7h20.4c1 0 1.8-.8 1.8-1.7V1.7C24 .8 23.2 0 22.2 0Z"/></svg>',
     mail: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M3 5.5h18v13H3zM3.5 6l8.5 7 8.5-7"/></svg>',
     pin: '<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="1.8" d="M12 21s-6.5-6.2-6.5-11a6.5 6.5 0 0 1 13 0c0 4.8-6.5 11-6.5 11Z"/><circle cx="12" cy="10" r="2.3" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>',
@@ -116,7 +117,9 @@
 
     var join = D.links.filter(function (l) { return l.id === "groupme"; })[0];
     up.innerHTML = upcoming.length
-      ? upcoming.map(function (m, i) { return meetingCard(m, i === 0); }).join("")
+      ? upcoming.map(function (m, i) { return meetingCard(m, i === 0); }).join("") +
+        '<p class="meetings-note">More dates are announced in the ' +
+          (join ? '<a href="' + esc(join.url) + '" target="_blank" rel="noopener">GroupMe</a>' : "GroupMe") + " first.</p>"
       : '<div class="empty">' +
           "<h3>Next meeting coming soon</h3>" +
           "<p>Dates and rooms are announced in the GroupMe first. Join so you don't miss it.</p>" +
@@ -186,13 +189,25 @@
 
   function renderProjects() {
     var teaser = $("#projects-teaser");
-    if (teaser) teaser.innerHTML = D.projects.slice(0, 3).map(projectCard).join("");
+    if (teaser) {
+      teaser.innerHTML = D.projects.slice(0, 3).map(projectCard).join("");
+      teaser.closest("section").hidden = !D.projects.length;
+    }
 
     var grid = $("#projects-grid");
     if (!grid) return;
+    var filters = $("#project-filters");
+    if (!D.projects.length) {
+      filters.hidden = true;
+      grid.outerHTML =
+        '<div class="empty">' +
+          "<h3>Projects coming soon</h3>" +
+          "<p>Our first projects of the year are in the works. Follow along on Instagram or in the GroupMe.</p>" +
+        "</div>";
+      return;
+    }
     grid.innerHTML = D.projects.map(projectCard).join("");
 
-    var filters = $("#project-filters");
     var cats = D.projects.map(function (p) { return p.category; })
       .filter(function (c, i, a) { return a.indexOf(c) === i; });
     filters.innerHTML = ["All"].concat(cats).map(function (c, i) {

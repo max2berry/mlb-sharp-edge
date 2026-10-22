@@ -9,7 +9,8 @@
   <meta property="og:title" content="World Basketball Analytics Club">
   <meta property="og:description" content="Exploring the game through data & analytics. Basketball · Analytics · Insights.">
   <meta property="og:type" content="website">
-  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
   <header class="site-header">
     <div class="wrap header-inner">
       <a class="brand" href="index.html" aria-label="WBAC home">
-        <img src="assets/logo.svg" alt="" width="38" height="38">
+        <img src="assets/wbac-mark.png" alt="" width="40" height="40">
         <span>
           <span class="brand-name">WBAC</span>
           <span class="brand-full">World Basketball Analytics Club</span>
@@ -129,7 +130,7 @@
     </section>
 
     <!-- Projects teaser -->
-    <section class="section section-alt" aria-labelledby="projects-title">
+    <section class="section section-alt" id="projects" aria-labelledby="projects-title">
       <div class="wrap">
         <div class="section-head">
           <div>
@@ -145,9 +146,12 @@
     <section class="section">
       <div class="wrap">
         <div class="join-band">
-          <div>
-            <h2>Pull up a chair.</h2>
-            <p>No experience required. If you love basketball and you're curious about the numbers behind it, you belong here.</p>
+          <div class="join-band-main">
+            <img class="badge" src="assets/wbac-logo.webp" alt="World Basketball Analytics Club logo" width="104" height="104" loading="lazy">
+            <div>
+              <h2>Pull up a chair.</h2>
+              <p>No experience required. If you love basketball and you're curious about the numbers behind it, you belong here.</p>
+            </div>
           </div>
           <a class="btn btn-primary" data-join href="#connect" target="_blank" rel="noopener">Join the GroupMe</a>
         </div>
@@ -157,7 +161,7 @@
 
   <footer class="site-footer">
     <div class="wrap footer-inner">
-      <span>© <span id="year"></span> World Basketball Analytics Club</span>
+      <span class="footer-brand"><img src="assets/wbac-mark.png" alt="" width="44" height="44" loading="lazy"><span>© <span id="year"></span> World Basketball Analytics Club · Indiana University</span></span>
       <div class="footer-socials" id="footer-socials"></div>
     </div>
   </footer>
