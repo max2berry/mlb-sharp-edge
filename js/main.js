@@ -138,28 +138,45 @@
     return name.split(/\s+/).map(function (w) { return w[0]; }).slice(0, 2).join("").toUpperCase();
   }
 
-  function renderLeadership() {
-    var el = $("#leadership-grid");
-    if (!el) return;
-    el.innerHTML = D.leadership.map(function (p) {
-      var name = isPlaceholder(p.name) ? "Name coming soon" : p.name;
-      var sub = [p.year, p.major].filter(Boolean).join(" · ");
-      var socials = "";
-      if (p.linkedin) socials += '<a href="' + esc(p.linkedin) + '" target="_blank" rel="noopener" aria-label="' + esc(name) + ' on LinkedIn">' + ICONS.linkedin + "</a>";
-      if (p.email) socials += '<a href="mailto:' + esc(p.email) + '" aria-label="Email ' + esc(name) + '">' + ICONS.mail + "</a>";
-      return (
-        '<article class="leader">' +
-          '<div class="leader-photo">' +
-            (p.photo
-              ? '<img src="' + esc(p.photo) + '" alt="' + esc(name) + '" loading="lazy">'
-              : '<span class="leader-initials" aria-hidden="true">' + initials(p.name) + "</span>") +
-          "</div>" +
-          '<span class="eyebrow">' + esc(p.role) + "</span>" +
-          '<h3 class="' + (isPlaceholder(p.name) ? "is-placeholder" : "") + '">' + esc(name) + "</h3>" +
+  function leaderCard(p) {
+    var name = isPlaceholder(p.name) ? "Name coming soon" : p.name;
+    var sub = [p.year, p.major].filter(Boolean).join(" · ");
+    var socials = "";
+    if (p.linkedin) socials += '<a href="' + esc(p.linkedin) + '" target="_blank" rel="noopener" aria-label="' + esc(name) + ' on LinkedIn">' + ICONS.linkedin + "</a>";
+    if (p.email) socials += '<a href="mailto:' + esc(p.email) + '" aria-label="Email ' + esc(name) + '">' + ICONS.mail + "</a>";
+    return (
+      '<article class="leader">' +
+        '<div class="leader-photo">' +
+          (p.photo
+            ? '<img src="' + esc(p.photo) + '" alt="' + esc(name) + '" loading="lazy">'
+            : '<span class="leader-initials" aria-hidden="true">' + initials(p.name) + "</span>") +
+        "</div>" +
+        '<div class="leader-info">' +
+          '<h4 class="' + (isPlaceholder(p.name) ? "is-placeholder" : "") + '">' + esc(name) + "</h4>" +
+          '<span class="leader-role">' + esc(p.role) + "</span>" +
           (sub ? '<p class="leader-sub">' + esc(sub) + "</p>" : "") +
           (p.bio ? '<p class="leader-bio">' + esc(p.bio) + "</p>" : "") +
           (socials ? '<div class="leader-socials">' + socials + "</div>" : "") +
-        "</article>"
+        "</div>" +
+      "</article>"
+    );
+  }
+
+  function renderLeadership() {
+    var el = $("#leadership-grid");
+    if (!el) return;
+    var groups = [
+      { key: "exec", label: "Executive board" },
+      { key: "team", label: "Analytics & operations" },
+    ];
+    el.innerHTML = groups.map(function (g) {
+      var people = D.leadership.filter(function (p) { return (p.group || "team") === g.key; });
+      if (!people.length) return "";
+      return (
+        '<div class="leader-group leader-group-' + g.key + '">' +
+          '<h3 class="leader-group-label">' + g.label + "</h3>" +
+          '<div class="leaders">' + people.map(leaderCard).join("") + "</div>" +
+        "</div>"
       );
     }).join("");
   }

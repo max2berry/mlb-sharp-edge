@@ -33,7 +33,8 @@ Open `index.html` in a browser, or run `python3 -m http.server` and visit http:/
 - [x] Official logo
 - [x] Instagram, X/Twitter, GroupMe and BeInvolved links
 - [ ] Club contact email
-- [ ] Leadership: name, role, year, major, 1–2 sentence bio, headshot, optional LinkedIn/email
+- [x] Leadership names, roles and headshots
+- [ ] Optional per officer: year, major, short bio, LinkedIn
 - [ ] Oct 27 meeting: topic and end time (currently "General Meeting", 7–8 PM)
 - [ ] November meeting dates, times, rooms and topics
 - [ ] Projects (the page shows "coming soon" until some are added)

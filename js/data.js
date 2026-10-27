@@ -92,16 +92,21 @@ window.WBAC = {
   ],
 
   /*
-   * Leadership. Put headshots in assets/leaders/ and set photo
-   * to e.g. "assets/leaders/jane-doe.jpg". Without a photo the
-   * card shows the person's initials.
+   * Leadership. group "exec" appears in the featured top row; everyone
+   * else goes in "team". Order within each group is display order.
+   * Headshots live in assets/leaders/ (square crops, ~600px).
+   * Optional fields per person: year, major, bio, linkedin, email.
    */
   leadership: [
-    { name: "TODO Name", role: "President", year: "", major: "", bio: "", photo: "", linkedin: "", email: "" },
-    { name: "TODO Name", role: "Vice President", year: "", major: "", bio: "", photo: "", linkedin: "", email: "" },
-    { name: "TODO Name", role: "Director of Analytics", year: "", major: "", bio: "", photo: "", linkedin: "", email: "" },
-    { name: "TODO Name", role: "Treasurer", year: "", major: "", bio: "", photo: "", linkedin: "", email: "" },
-    { name: "TODO Name", role: "Marketing & Media", year: "", major: "", bio: "", photo: "", linkedin: "", email: "" },
+    { name: "Jack Doster", role: "President", group: "exec", photo: "assets/leaders/jack-doster.jpg" },
+    { name: "Max Toy", role: "Vice President", group: "exec", photo: "assets/leaders/max-toy.jpg" },
+    { name: "Connor Edds", role: "Treasurer", group: "exec", photo: "assets/leaders/connor-edds.jpg" },
+    { name: "Jackson McGuire", role: "Head of Analytics", group: "team", photo: "assets/leaders/jackson-mcguire.jpg" },
+    { name: "Carmine Genovese", role: "Analytics Project Lead", group: "team", photo: "assets/leaders/carmine-genovese.jpg" },
+    { name: "Adi Jalram", role: "Outreach & Recruitment Coordinator", group: "team", photo: "assets/leaders/adi-jalram.jpg" },
+    { name: "Blaine Ford", role: "Social Media Manager", group: "team", photo: "assets/leaders/blaine-ford.jpg" },
+    { name: "Ryan Doster", role: "Analytics Researcher", group: "team", photo: "assets/leaders/ryan-doster.jpg" },
+    { name: "Jack Brennan", role: "Analytics Researcher", group: "team", photo: "assets/leaders/jack-brennan.jpg" },
   ],
 
   /*
