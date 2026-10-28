@@ -92,21 +92,20 @@ window.WBAC = {
   ],
 
   /*
-   * Leadership. group "exec" appears in the featured top row; everyone
-   * else goes in "team". Order within each group is display order.
+   * Leadership, in display order (three per row on desktop).
    * Headshots live in assets/leaders/ (square crops, ~600px).
    * Optional fields per person: year, major, bio, linkedin, email.
    */
   leadership: [
-    { name: "Jack Doster", role: "President", group: "exec", photo: "assets/leaders/jack-doster.jpg" },
-    { name: "Max Toy", role: "Vice President", group: "exec", photo: "assets/leaders/max-toy.jpg" },
-    { name: "Connor Edds", role: "Treasurer", group: "exec", photo: "assets/leaders/connor-edds.jpg" },
-    { name: "Jackson McGuire", role: "Head of Analytics", group: "team", photo: "assets/leaders/jackson-mcguire.jpg" },
-    { name: "Carmine Genovese", role: "Analytics Project Lead", group: "team", photo: "assets/leaders/carmine-genovese.jpg" },
-    { name: "Adi Jalram", role: "Outreach & Recruitment Coordinator", group: "team", photo: "assets/leaders/adi-jalram.jpg" },
-    { name: "Blaine Ford", role: "Social Media Manager", group: "team", photo: "assets/leaders/blaine-ford.jpg" },
-    { name: "Ryan Doster", role: "Analytics Researcher", group: "team", photo: "assets/leaders/ryan-doster.jpg" },
-    { name: "Jack Brennan", role: "Analytics Researcher", group: "team", photo: "assets/leaders/jack-brennan.jpg" },
+    { name: "Jack Doster", role: "President", photo: "assets/leaders/jack-doster.jpg" },
+    { name: "Max Toy", role: "Vice President", photo: "assets/leaders/max-toy.jpg" },
+    { name: "Connor Edds", role: "Treasurer", photo: "assets/leaders/connor-edds.jpg" },
+    { name: "Jackson McGuire", role: "Head of Analytics", photo: "assets/leaders/jackson-mcguire.jpg" },
+    { name: "Carmine Genovese", role: "Analytics Project Lead", photo: "assets/leaders/carmine-genovese.jpg" },
+    { name: "Adi Jalram", role: "Outreach & Recruitment Coordinator", photo: "assets/leaders/adi-jalram.jpg" },
+    { name: "Blaine Ford", role: "Social Media Manager", photo: "assets/leaders/blaine-ford.jpg" },
+    { name: "Ryan Doster", role: "Analytics Researcher", photo: "assets/leaders/ryan-doster.jpg" },
+    { name: "Jack Brennan", role: "Analytics Researcher", photo: "assets/leaders/jack-brennan.jpg" },
   ],
 
   /*

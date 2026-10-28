@@ -299,16 +299,7 @@ a.hub-card:hover .hub-arrow { color: var(--text); transform: translateX(3px); }
 }
 
 /* ── Leadership ─────────────────────────────────────────── */
-.leadership { display: grid; gap: clamp(36px, 5vw, 56px); }
-.leader-group-label {
-  display: flex; align-items: center; gap: 16px; margin-bottom: 18px;
-  font: 500 12px/1.4 var(--font-mono); letter-spacing: .12em; text-transform: uppercase; color: var(--text-3);
-}
-.leader-group-label::after { content: ""; flex: 1; height: 1px; background: var(--line); }
-.leaders { display: grid; gap: 16px; }
-.leader-group-exec .leaders { grid-template-columns: repeat(3, 1fr); gap: 20px; }
-.leader-group-team .leaders { grid-template-columns: repeat(6, 1fr); }
-
+.leaders { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .leader {
   display: flex; flex-direction: column; overflow: hidden;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -331,16 +322,13 @@ a.hub-card:hover .hub-arrow { color: var(--text); transform: translateX(3px); }
   background: linear-gradient(to top, rgba(19, 33, 49, 0.55), rgba(19, 33, 49, 0) 30%);
 }
 .leader-initials { font: 700 56px/1 var(--font-display); color: var(--line-strong); letter-spacing: .02em; }
-.leader-info { display: flex; flex-direction: column; flex: 1; padding: 14px 16px 18px; }
+.leader-info { display: flex; flex-direction: column; flex: 1; padding: 18px 22px 22px; }
+.leader h3 { font: 600 clamp(22px, 2.2vw, 28px)/1.1 var(--font-display); text-transform: uppercase; letter-spacing: .01em; }
+.leader h3.is-placeholder { color: var(--text-3); }
 .leader-role {
   margin-top: 6px;
-  font: 500 11px/1.45 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--text-3);
+  font: 500 12px/1.45 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
 }
-.leader h4 { margin: 0; font: 600 20px/1.1 var(--font-display); text-transform: uppercase; letter-spacing: .01em; }
-.leader h4.is-placeholder { color: var(--text-3); }
-.leader-group-exec .leader-info { padding: 18px 22px 22px; }
-.leader-group-exec .leader-role { font-size: 12px; color: var(--accent); }
-.leader-group-exec .leader h4 { font-size: clamp(24px, 2.6vw, 30px); }
 .leader-sub { margin-top: 4px; font-size: 14px; color: var(--text-3); }
 .leader-bio { margin-top: 10px; font-size: 15px; color: var(--text-2); }
 .leader-socials { display: flex; gap: 8px; margin-top: auto; padding-top: 14px; }
@@ -351,16 +339,13 @@ a.hub-card:hover .hub-arrow { color: var(--text); transform: translateX(3px); }
 .leader-socials a:hover { color: var(--text); border-color: var(--text-2); }
 .leader-socials svg { width: 16px; height: 16px; }
 
-@media (max-width: 1080px) { .leader-group-team .leaders { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 720px) {
-  .leader-group-exec .leaders { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .leader-group-exec .leader:first-child { grid-column: 1 / -1; flex-direction: row; }
-  .leader-group-exec .leader:first-child .leader-photo { width: 48%; flex: none; }
-  .leader-group-exec .leader:first-child .leader-info { justify-content: center; }
-  .leader-group-team .leaders { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .leader-group-exec .leader-info { padding: 14px 16px 18px; }
-  .leader h4 { font-size: 18px; }
-  .leader-group-exec .leader h4 { font-size: 22px; }
+  .leaders { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  /* Odd count: center the last card instead of leaving a gap. */
+  .leader:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
+  .leader-info { padding: 14px 16px 18px; }
+  .leader h3 { font-size: 19px; }
+  .leader-role { font-size: 11px; }
 }
 
 /* ── Projects ───────────────────────────────────────────── */

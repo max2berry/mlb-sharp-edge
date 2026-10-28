@@ -152,7 +152,7 @@
             : '<span class="leader-initials" aria-hidden="true">' + initials(p.name) + "</span>") +
         "</div>" +
         '<div class="leader-info">' +
-          '<h4 class="' + (isPlaceholder(p.name) ? "is-placeholder" : "") + '">' + esc(name) + "</h4>" +
+          '<h3 class="' + (isPlaceholder(p.name) ? "is-placeholder" : "") + '">' + esc(name) + "</h3>" +
           '<span class="leader-role">' + esc(p.role) + "</span>" +
           (sub ? '<p class="leader-sub">' + esc(sub) + "</p>" : "") +
           (p.bio ? '<p class="leader-bio">' + esc(p.bio) + "</p>" : "") +
@@ -164,21 +164,7 @@
 
   function renderLeadership() {
     var el = $("#leadership-grid");
-    if (!el) return;
-    var groups = [
-      { key: "exec", label: "Executive board" },
-      { key: "team", label: "Analytics & operations" },
-    ];
-    el.innerHTML = groups.map(function (g) {
-      var people = D.leadership.filter(function (p) { return (p.group || "team") === g.key; });
-      if (!people.length) return "";
-      return (
-        '<div class="leader-group leader-group-' + g.key + '">' +
-          '<h3 class="leader-group-label">' + g.label + "</h3>" +
-          '<div class="leaders">' + people.map(leaderCard).join("") + "</div>" +
-        "</div>"
-      );
-    }).join("");
+    if (el) el.innerHTML = D.leadership.map(leaderCard).join("");
   }
 
   /* ── Projects ────────────────────────────────────────── */
