@@ -18,6 +18,8 @@ A fast, static site for WBAC. Plain HTML, CSS and JS: no build step and no depen
 
 Logo files live in `assets/`: `wbac-mark.png` (globe only, header and footer), `wbac-logo.webp` (full badge), plus `favicon.png` and `apple-touch-icon.png`.
 
+**Caching:** browsers keep files for up to 10 minutes. When you change `css/`, `js/` or replace an image, bump the `?v=` number on its link (in both HTML files for CSS/JS, in `data.js` for headshots) so visitors get the new version right away.
+
 ## Previewing locally
 
 Open `index.html` in a browser, or run `python3 -m http.server` and visit http://localhost:8000.
