@@ -92,7 +92,7 @@ window.WBAC = {
   ],
 
   /*
-   * Leadership, in display order (three per row on desktop).
+   * Leadership, in display order (five per row on desktop).
    * Headshots live in assets/leaders/ (square crops, ~600px). When you
    * replace a photo, bump its ?v= number so browsers fetch the new one.
    * Optional fields per person: year, major, bio, linkedin, email.
@@ -102,11 +102,12 @@ window.WBAC = {
     { name: "Max Toy", role: "Vice President", photo: "assets/leaders/max-toy.jpg?v=2" },
     { name: "Connor Edds", role: "Treasurer", photo: "assets/leaders/connor-edds.jpg?v=2" },
     { name: "Jackson McGuire", role: "Head of Analytics", photo: "assets/leaders/jackson-mcguire.jpg?v=2" },
-    { name: "Carmine Genovese", role: "Analytics Project Lead", photo: "assets/leaders/carmine-genovese.jpg?v=2" },
-    { name: "Adi Jalram", role: "Outreach & Recruitment Coordinator", photo: "assets/leaders/adi-jalram.jpg?v=2" },
     { name: "Blaine Ford", role: "Social Media Manager", photo: "assets/leaders/blaine-ford.jpg?v=2" },
-    { name: "Ryan Doster", role: "Analytics Researcher", photo: "assets/leaders/ryan-doster.jpg?v=2" },
+    { name: "Carmine Genovese", role: "Analytics Project Lead", photo: "assets/leaders/carmine-genovese.jpg?v=2" },
     { name: "Jack Brennan", role: "Analytics Researcher", photo: "assets/leaders/jack-brennan.jpg?v=2" },
+    { name: "Ryan Doster", role: "Analytics Researcher", photo: "assets/leaders/ryan-doster.jpg?v=2" },
+    { name: "Adi Jalram", role: "Outreach & Recruitment Coordinator", photo: "assets/leaders/adi-jalram.jpg?v=2" },
+    { name: "Grady Rupp", role: "Outreach & Recruitment Coordinator", photo: "assets/leaders/grady-rupp.jpg?v=2" },
   ],
 
   /*

@@ -299,7 +299,7 @@ a.hub-card:hover .hub-arrow { color: var(--text); transform: translateX(3px); }
 }
 
 /* ── Leadership ─────────────────────────────────────────── */
-.leaders { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.leaders { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
 .leader {
   display: flex; flex-direction: column; overflow: hidden;
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
@@ -322,12 +322,12 @@ a.hub-card:hover .hub-arrow { color: var(--text); transform: translateX(3px); }
   background: linear-gradient(to top, rgba(19, 33, 49, 0.55), rgba(19, 33, 49, 0) 30%);
 }
 .leader-initials { font: 700 56px/1 var(--font-display); color: var(--line-strong); letter-spacing: .02em; }
-.leader-info { display: flex; flex-direction: column; flex: 1; padding: 18px 22px 22px; }
-.leader h3 { font: 600 clamp(22px, 2.2vw, 28px)/1.1 var(--font-display); text-transform: uppercase; letter-spacing: .01em; }
+.leader-info { display: flex; flex-direction: column; flex: 1; padding: 14px 16px 18px; }
+.leader h3 { font: 600 21px/1.1 var(--font-display); text-transform: uppercase; letter-spacing: .01em; }
 .leader h3.is-placeholder { color: var(--text-3); }
 .leader-role {
   margin-top: 6px;
-  font: 500 12px/1.45 var(--font-mono); letter-spacing: .1em; text-transform: uppercase; color: var(--accent);
+  font: 500 11px/1.45 var(--font-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--accent);
 }
 .leader-sub { margin-top: 4px; font-size: 14px; color: var(--text-3); }
 .leader-bio { margin-top: 10px; font-size: 15px; color: var(--text-2); }
@@ -339,13 +339,16 @@ a.hub-card:hover .hub-arrow { color: var(--text); transform: translateX(3px); }
 .leader-socials a:hover { color: var(--text); border-color: var(--text-2); }
 .leader-socials svg { width: 16px; height: 16px; }
 
+@media (max-width: 1080px) {
+  .leaders { grid-template-columns: repeat(3, 1fr); }
+  /* A lone card on the last row sits in the middle column. */
+  .leader:last-child:nth-child(3n+1) { grid-column: 2; }
+}
 @media (max-width: 720px) {
   .leaders { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  /* Odd count: center the last card instead of leaving a gap. */
+  .leader:last-child:nth-child(3n+1) { grid-column: auto; }
   .leader:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 6px); }
-  .leader-info { padding: 14px 16px 18px; }
   .leader h3 { font-size: 19px; }
-  .leader-role { font-size: 11px; }
 }
 
 /* ── Projects ───────────────────────────────────────────── */
